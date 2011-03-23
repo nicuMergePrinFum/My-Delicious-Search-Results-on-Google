@@ -1,14 +1,15 @@
 // ==UserScript==
 // @name     My Delicious Search Results on Google
-// @namespace      jmason
+// @namespace      jmason, NicuMergePrinFum
 // @description    Shows tag-search results from my Delicious account on Google search pages, with links to more extensive Delicious searches.  Use 'User Script Commands' -> 'Set Delicious Username' to specify your username
 // @include  http://www.google.*q=*
 // @date     2009-06-14
-// @version  0.2
+// @version  0.2.0.1
 // @GM_version     0.8.20080609.0
 // 
 // This is almost entirely from 'Delicious Search Results on Google' (http://userscripts.org/scripts/show/43784), which in turn notes that 99% of the code for that user script comes form markcarey's userscript 'Twitter Search Results on Google' (http://userscripts.org/scripts/show/43451).
 //
+// 2011.02.20: Some html change to make it display better, now maximum 20 results from delicious will be displayed.
 // ==/UserScript==
 
 del_username = GM_getValue('mydel_username');
@@ -60,12 +61,13 @@ GM_DUR = {
       var row = tb.appendChild(document.createElement("tr"));
       row.innerHTML = '<td style="padding-top: 5px; padding-right: 10px; font-size: 78%; line-height: normal; width: 43px; text-align: center;" valign="top"><img src="'+delLogo+'" alt="" height="42" width="43"></td><td style="padding-top: 3px;" valign="top">';
       
-      for( var i=0; i < 5; i++ )
+      for( var i=0; i < 20; i++ )
       {
-        il = "<div class='s'>"+
+        if (results.length-1 < i) break;
+        il = "<div class='s' style='margin-top:10px;'>"+
         "<a href='"+results[i].u+"' class='l'>"+
           results[i].d+"</a><br/> "+
-          ' <h4 class="r">'+ results[i].n +'</span><br/> '+
+          ' <h4 class="r">'+ results[i].n +'</span> '+
           ' <span class="f">'+ results[i].t +'</span></div>';
         row.innerHTML += il;
       }
