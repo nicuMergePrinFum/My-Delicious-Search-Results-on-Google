@@ -1,0 +1,10 @@
+This Greasmonkey script will insert Delicious search results of your bookmarks into a Google search page, on top.
+It allow to do a search on google and in your delicious bookmarks in the same time. 
+
+After installing the script, in greasmonkey do "Set script commands"->"Set Delicious Username" and enter your delicious script.
+
+Original author page: http://taint.org/2009/07/01/105859a.html
+
+This is a fork:
++ Some layout fixes of delicious results.
++ Maximum 20 results will be displayed from the delicious search.
