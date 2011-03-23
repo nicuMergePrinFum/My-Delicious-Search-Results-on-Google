@@ -3,6 +3,8 @@ It allow to do a search on google and in your delicious bookmarks in the same ti
 
 After installing the script, in greasmonkey do "Set script commands"->"Set Delicious Username" and enter your delicious script.
 
+To install, click: https://github.com/nicuMergePrinFum/My-Delicious-Search-Results-on-Google/raw/master/my_delicious_search_resu.user.js
+
 Original author page: http://taint.org/2009/07/01/105859a.html
 
 This is a fork:
